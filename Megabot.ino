@@ -8,5 +8,5 @@ void setup() {
 }
 
 void loop() {
-  strategy.tryReflectance();
+  strategy.followLine();
 }

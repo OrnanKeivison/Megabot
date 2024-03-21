@@ -11,6 +11,7 @@ class Strategy{
     void tryLed();
     void tryMovement();
     void tryReflectance();
+    void followLine();
   private:
     Leds led;
     Movement movement;

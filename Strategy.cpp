@@ -1,4 +1,26 @@
 #include "Strategy.h"
+
+void Strategy::followLine() {
+
+  reflectance.reading();
+
+  if (reflectance.forward()) {
+    movement.forward();
+  }
+
+  else if (reflectance.right()) {
+    movement.right();
+  }
+
+  else if (reflectance.left()) {
+    movement.left();
+  }
+
+  else if (reflectance.pppp()) {
+    movement.stopp();
+    delay(1000);
+  }
+}
 void Strategy::tryReflectance(){
   reflectance.reading();
   Serial.print("Esq: ");
