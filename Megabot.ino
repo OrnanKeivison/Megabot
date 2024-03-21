@@ -2,8 +2,9 @@
 Strategy strategy;
 
 void setup() {
+  
 }
 
 void loop() {
-  strategy.tryLed();
+  strategy.tryMovement();
 }
