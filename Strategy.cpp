@@ -1,5 +1,17 @@
 #include "Strategy.h"
-
+void Strategy::tryReflectance(){
+  reflectance.reading();
+  Serial.print("Esq: ");
+  Serial.print(reflectance.SensorLinhaEsq);
+  Serial.print("; +Esq: ");
+  Serial.print(reflectance.SensorLinhaMaisEsq);
+  Serial.print("Dir: ");
+  Serial.print(reflectance.SensorLinhaDir);
+  Serial.print("; +Dir: ");
+  Serial.print(reflectance.SensorLinhaMaisDir);
+  Serial.println(";");
+  delay(500);
+  }
 void Strategy::tryMovement(){
   movement.forward();
   delay(1000);
