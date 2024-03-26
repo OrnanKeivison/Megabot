@@ -21,6 +21,55 @@ void Strategy::followLine() {
     delay(1000);
   }
 }
+void Strategy::tryColorSensor(int way = 1){
+  colorSensor.reading();
+  if(way == 1){
+    Serial.print("Esq: ");
+    Serial.print(colorSensor.sensorCorEsq.h);
+    Serial.print("; ");
+    Serial.print(colorSensor.sensorCorEsq.s);
+    Serial.print("; ");
+    Serial.println(colorSensor.sensorCorEsq.v);
+    Serial.print("Dir: ");
+    Serial.print(colorSensor.sensorCorDir.h);
+    Serial.print("; ");
+    Serial.print(colorSensor.sensorCorDir.s);
+    Serial.print("; ");
+    Serial.print(colorSensor.sensorCorDir.v);
+    Serial.println(";");
+    delay(500);
+  }
+  else{
+    Serial.print("Dir: ");
+    if(colorSensor.greenRight()){
+      Serial.print("verde");
+    }
+    else if(colorSensor.whiteRight()){
+      Serial.print("branco");
+    }
+    else if(colorSensor.blackRight()){
+      Serial.print("preto");
+    }
+    else if(colorSensor.grayRight()){
+      Serial.print("cinza");
+    }
+
+    Serial.print("; Esq: ");
+    if(colorSensor.greenLeft()){
+      Serial.println("verde");
+    }
+    else if(colorSensor.whiteLeft()){
+      Serial.println("branco");
+    }
+    else if(colorSensor.blackLeft()){
+      Serial.println("preto");
+    }
+    else if(colorSensor.grayLeft()){
+      Serial.println("cinza");
+    }
+    delay(500);
+  }
+  }
 void Strategy::tryReflectance(){
   reflectance.reading();
   Serial.print("Esq: ");
