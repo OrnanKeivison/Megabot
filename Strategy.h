@@ -14,6 +14,7 @@ class Strategy{
     void tryReflectance();
     void tryColorSensor(int way = 1);
     void followLine();
+    void makeGreen();
 
   private:
     Leds led;

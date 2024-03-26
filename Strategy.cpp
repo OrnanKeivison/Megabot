@@ -17,8 +17,44 @@ void Strategy::followLine() {
   }
 
   else if (reflectance.pppp()) {
-    movement.stopp();
-    delay(1000);
+    makeGreen();
+  }
+}
+void Strategy::makeGreen() {
+  movement.stopp();
+  delay(200);
+  colorSensor.reading();
+  delay(200);
+  colorSensor.reading();
+  delay(200);
+  colorSensor.reading();
+  delay(200);
+  colorSensor.reading();
+  delay(200);
+  colorSensor.reading();
+
+  if (colorSensor.greenLeft() && !(colorSensor.greenRight())) {
+    movement.forward();
+    delay(700);
+    movement.rotateLeft();
+  }
+
+  else if (!(colorSensor.greenLeft()) && colorSensor.greenRight()) {
+    movement.forward();
+    delay(700);
+    movement.rotateRight();
+  }
+
+  else if (colorSensor.greenLeft() && colorSensor.greenRight()) {
+    movement.forward();
+    delay(500);
+    movement.rotateRight();
+    movement.rotateRight();
+  }
+
+  else{
+    movement.forward();
+    delay(500);
   }
 }
 void Strategy::tryColorSensor(int way = 1){

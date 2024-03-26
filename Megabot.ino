@@ -8,5 +8,6 @@ void setup() {
 }
 
 void loop() {
-  strategy.tryColorSensor(2);
+   strategy.followLine();
+  //  strategy.tryColorSensor(2);
 }
