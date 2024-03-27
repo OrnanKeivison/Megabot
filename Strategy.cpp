@@ -57,6 +57,15 @@ void Strategy::makeGreen() {
     delay(500);
   }
 }
+void Strategy::tryDistance(){
+  distance.reading();
+  Serial.print("Dir: ");
+  Serial.print(distance.distDir);
+  Serial.print("; Esq: ");
+  Serial.print(distance.distEsq);
+  Serial.println(";");
+  delay(500);
+}
 void Strategy::tryColorSensor(int way = 1){
   colorSensor.reading();
   if(way == 1){

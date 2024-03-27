@@ -3,11 +3,10 @@
 Strategy strategy;
 
 void setup() {
-  robo.configurar(false);
-  Serial.begin(9600);
+  strategy.init();
 }
 
 void loop() {
-   strategy.followLine();
+   strategy.tryDistance();
   //  strategy.tryColorSensor(2);
 }
